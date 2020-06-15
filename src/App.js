@@ -20,7 +20,7 @@ const fileData = Data.map((obj) => {
 //
 //this is another way to pass styles, check this line because its connected to it :   <h1 className="header" style={{ headerStyle }}>
 const headerStyle = {
-  backgroundColor: "red",
+  backgroundColor: "transparent",
   color: "green",
 };
 //
@@ -28,10 +28,11 @@ export default class App extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <h1 className="header" style={headerStyle}>
-          HELLO
-        </h1>
-        {/* 
+        <div className="wrapper-section">
+          <h1 className="header" style={headerStyle}>
+            HELLO
+          </h1>
+          {/* 
         -data base is different, here you set it up like this :  {fileData}   
         
         -this class here: export default class App extends React.Component {
@@ -40,10 +41,14 @@ export default class App extends React.Component {
         
         */}
 
-        <h2 style={{ backgroundColor: "red", color: "green" }}> My Todo </h2>
+          <h2 style={{ backgroundColor: "#fff", color: "#006CFF" }}>
+            {" "}
+            My Todo{" "}
+          </h2>
 
-        {fileData}
-        <List />
+          {fileData}
+          <List />
+        </div>
       </React.Fragment>
     );
   }
