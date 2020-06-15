@@ -4,12 +4,45 @@ import React from "react";
 // export default class App extends Component {
 //
 import List from "./components/List";
+import Data from "./data.json";
+//
+//the following is the afternoon lesson that will be related to the assignment tomorrow
+//DATABASE
+const fileData = Data.map((obj) => {
+  const { id, name, address } = obj;
+  //
+  return (
+    <h4 key={id}>
+      Hey i am {name}, and I live in {address}
+    </h4>
+  );
+});
+//
+//this is another way to pass styles, check this line because its connected to it :   <h1 className="header" style={{ headerStyle }}>
+const headerStyle = {
+  backgroundColor: "red",
+  color: "green",
+};
 //
 export default class App extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <h1>HELLO</h1>
+        <h1 className="header" style={headerStyle}>
+          HELLO
+        </h1>
+        {/* 
+        -data base is different, here you set it up like this :  {fileData}   
+        
+        -this class here: export default class App extends React.Component {
+            is why i have to use className in the h1, so careful not to confuse them
+        
+        
+        */}
+
+        <h2 style={{ backgroundColor: "red", color: "green" }}> My Todo </h2>
+
+        {fileData}
         <List />
       </React.Fragment>
     );

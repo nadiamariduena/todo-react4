@@ -24,7 +24,7 @@ const UserList = (props) => {
         onClick={() => {
           console.log(item);
 
-          props.del(item);
+          props.del(item); //the fake function calling from the parent List.js
         }}
       >
         🗑
